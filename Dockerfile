@@ -6,7 +6,7 @@ ADD run.sh /run.sh
 RUN DEBIAN_FRONTEND=noninteractive && apt-get update && \
 	apt-get -y upgrade && apt-get -y install libssl-dev openssl && \
 	cd /opt && wget https://www.python.org/ftp/python/3.6.7/Python-3.6.7.tar.xz && tar Jxvf Python-3.6.7.tar.xz && \ 
-	cd Python-3.6.7 && ./configure --with-ssl && make && make install && rm /usr/bin/python && ln -s /opt/Python3.6.7/python /usr/bin/python && pip install django ~=2.0.5
+	cd Python-3.6.7 && ./configure --with-ssl && make && make install && rm /usr/bin/python && ln -s /opt/Python3.6.7/python /usr/bin/python && pip install --upgrade pip && pip install django~=2.0.5
 		
 EXPOSE 80
 WORKDIR /var/www/html
