@@ -8,7 +8,7 @@ RUN chmod +x /*.sh && \
 	apt-get -y upgrade && apt-get -y install libssl-dev openssl && \
 	cd /opt && wget https://www.python.org/ftp/python/3.6.7/Python-3.6.7.tar.xz && tar Jxvf Python-3.6.7.tar.xz && \ 
 	rm /usr/bin/python && cd Python-3.6.7 && ./configure --with-ssl && make && make install && \
-	cd /usr/bin && ln -s /opt/Python3.6.7/python python && \
+	cd /usr/bin && ln -s /opt/Python-3.6.7/python /usr/bin/python && \
 	cd /usr/local/bin && ln -s pip3.6 pip && \
 	pip install --upgrade pip && pip install django~=2.0.5
 		
