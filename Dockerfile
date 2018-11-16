@@ -10,7 +10,7 @@ RUN chmod +x /*.sh && \
 	rm /usr/bin/python && cd Python-3.6.7 && ./configure --with-ssl && make && make install && \
 	cd /usr/bin && ln -s /opt/Python-3.6.7/python /usr/bin/python && \
 	cd /usr/local/bin && ln -s pip3.6 pip && \
-	pip install --upgrade pip && pip install django~=2.0.5
+	pip install --upgrade pip && pip install django~=2.0.5 && pip install pymysql && pip install numpy && pip install opencv-python
 		
 EXPOSE 80
 WORKDIR /var/www/html
